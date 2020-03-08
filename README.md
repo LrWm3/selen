@@ -20,3 +20,27 @@ exports.config = {
   baseUrl: 'https://angularjs.org' // sets the default baseUrl
 };
 ```
+
+## passing in arbitray stuff
+
+[see here](https://github.com/angular/protractor/blob/5.4.1/lib/config.ts#L517)
+
+```ts
+  /**
+   * The params object will be passed directly to the Protractor instance,
+   * and can be accessed from your test as browser.params. It is an arbitrary
+   * object and can contain anything you may need in your test.
+   * This can be changed via the command line as:
+   *   --params.login.user "Joe"
+   *
+   * Example:
+   * params: {
+   *   login: {
+   *     user: 'Jane',
+   *     password: '1234'
+   *   }
+   * }
+   */
+  params?: any;
+
+```
