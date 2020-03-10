@@ -1,18 +1,31 @@
 var AngularHomepage = function () {
 
+  // Entire page
+  var page;
+
   // These reference items which will not change after page-load
-  var nameInput = element(by.model('yourName'));
-  var greeting = element(by.binding('yourName'));
-  var todoListNewTodoText = element(by.model('todoList.todoText'));
-  var todoListNewTodoAdd = element(by.css('[value="add"]'));
+  var nameInput;
+  var greeting;
+  var todoListNewTodoText;
+  var todoListNewTodoAdd;
 
   // These are used to retrieve lists of items which will dynamically change.
-  var todoListItemSelector = by.repeater('todoList.todoText');
-  var todoListItemDoneSelector = by.css('.done-true');
+  var todoListItemSelector;
+  var todoListItemDoneSelector;
 
   this.get = async function () {
     // We expect the baseUrl to be set appropriately
-    await browser.get();
+    page = await browser.get();
+    // These reference items which will not change after page-load
+    nameInput = element(by.model('yourName'));
+    greeting = element(by.binding('yourName'));
+    todoListNewTodoText = element(by.model('todoList.todoText'));
+    todoListNewTodoAdd = element(by.css('[value="add"]'));
+
+    // These are used to retrieve lists of items which will dynamically change.
+    todoListItemSelector = by.repeater('todoList.todoText');
+    todoListItemDoneSelector = by.css('.done-true');
+
   };
 
   this.setName = async function(name) {
