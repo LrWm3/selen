@@ -44,3 +44,11 @@ exports.config = {
   params?: any;
 
 ```
+
+## Running it
+
+Install protractor and then do this.
+
+```bash
+protractor conf.js
+```
