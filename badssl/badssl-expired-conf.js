@@ -3,6 +3,6 @@ exports.config = {
   specs: ['badssl-expired.spec.js'],
   baseUrl: 'https://expired.badssl.com',
   'goog:chromeOptions': {
-    'args': ['ignore-certificate-errors']
+    'args': ['--ignore-certificate-errors']
   }
 };
